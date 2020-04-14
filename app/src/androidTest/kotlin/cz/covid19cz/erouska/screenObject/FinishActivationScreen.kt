@@ -5,6 +5,7 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import cz.covid19cz.erouska.R
+import cz.covid19cz.erouska.helpers.ManufacturerHelper
 import org.awaitility.Awaitility.await
 import java.util.concurrent.TimeUnit
 
@@ -14,6 +15,8 @@ class FinishActivationScreen {
     }
 
     fun finish() {
+
+        if (!ManufacturerHelper.isBatteryTutorialNeeded()) return
 
         await().ignoreExceptions().atMost(15, TimeUnit.SECONDS).untilAsserted {
             onView(withId(R.id.battery_opt_title)).checkMatchesString(TITLE)

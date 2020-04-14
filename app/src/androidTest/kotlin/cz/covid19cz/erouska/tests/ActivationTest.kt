@@ -53,7 +53,7 @@ class ActivationTest {
             typeSMSCode()
             verifySMSCode()
         }
-        // samsung baterry saver screen
+        // battery saver screen
         finishActivation.finish()
         homeScreen.isErouskaActive()
 
@@ -70,7 +70,7 @@ class ActivationTest {
         Awaitility.await().ignoreExceptions().atMost(35, TimeUnit.SECONDS).untilAsserted {
             onView(ViewMatchers.withId(R.id.login_verify_later_button)).perform(click())
         }
-        // samsung baterry saver screen
+        // battery saver screen
         finishActivation.finish()
         homeScreen.isErouskaActive()
 
