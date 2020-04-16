@@ -6,12 +6,10 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withSubstring
 import cz.covid19cz.erouska.R
-import cz.covid19cz.erouska.screenObject.PhoneNumberScreen.Companion.PHONE_NUMBER
+import cz.covid19cz.erouska.screenObject.PhoneNumberScreen.PHONE_NUMBER
 
-class SMSScreen {
-    companion object {
-        const val SMS_CODE = "000000"
-    }
+object SMSScreen {
+    private const val SMS_CODE = "000000"
 
     fun typeSMSCode() {
         onView(withId(R.id.phone_number_code)).check(matches(withSubstring(PHONE_NUMBER)))

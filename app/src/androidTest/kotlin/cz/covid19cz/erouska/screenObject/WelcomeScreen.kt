@@ -7,10 +7,9 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import cz.covid19cz.erouska.R
 import org.hamcrest.CoreMatchers.containsString
 
-class WelcomeScreen {
-    companion object {
-        const val PART_OF_HELP_TITLE = "Proč je eRouška potřeba?"
-    }
+object WelcomeScreen {
+    private const val PART_OF_HELP_TITLE = "Proč je eRouška potřeba?"
+
     fun startActivation() {
         onView(withText(R.string.welcome_title)).check(matches(isDisplayed()))
         onView(withId(R.id.welcome_continue_btn)).perform(click())
